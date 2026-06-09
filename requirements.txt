@@ -1,0 +1,11 @@
+openai
+feedparser
+requests
+moviepy<2.0
+python-dotenv
+pyyaml
+Pillow
+numpy
+pydantic
+manim==0.20.1
+pytest
