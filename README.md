@@ -7,11 +7,10 @@ Automatically generates YouTube Shorts-format educational programming videos fro
 ## Features
 
 - **Typing animation** — code sections reveal character-by-character with a blinking cursor, mimicking live coding
+  - **Syntax highlighting** — Python keywords, strings, numbers, and comments are each rendered in distinct colours
 - **Manim animations** — concept sections use GPT-4o to generate and render Manim scenes that visually explain the narration
-- **Syntax highlighting** — Python keywords, strings, numbers, and comments are each rendered in distinct colours
 - **TTS voice-over** — OpenAI TTS (`alloy` voice) reads each section's narration; audio and animations are composed into a single track
-- **MD5 caching** — generated TTS audio and Manim mp4s are cached on disk; re-runs skip the API and render steps
-- **YouTube Shorts format** — 1080×1920 portrait, 24 fps, under 60 seconds
+- **Vertical Shorts format** — 1080×1920 portrait, under 60 seconds, suitable for YouTube, TikTok, and Instagram.
 
 ---
 
@@ -26,17 +25,16 @@ Automatically generates YouTube Shorts-format educational programming videos fro
 ## Setup
 
 ```bash
-# 1. Create and activate a virtual environment
+git clone https://github.com/mehdimo/short_video_pipeline
+cd short_video_pipeline
 python3 -m venv venv
 source venv/bin/activate
 
-# 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Add your OpenAI API key
-cp config/.env.example config/.env   # then edit config/.env
+cp config/.env.example config/.env   
 ```
-
+then edit 
 `config/.env`:
 ```
 OPENAI_API_KEY=sk-...
@@ -47,7 +45,7 @@ OPENAI_API_KEY=sk-...
 ## Usage
 
 ```bash
-python src/create_video.py
+python src/create_video.py --topic "linked list"
 ```
 
 Output is written to `output/linked_list.mp4`.
